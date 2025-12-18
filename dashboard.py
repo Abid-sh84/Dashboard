@@ -17,15 +17,23 @@ st.set_page_config(
 # ======================================================
 st.markdown("""
     <style>
-    .stApp { 
+    /* Main app background */
+    .stApp, .main, [data-testid="stAppViewContainer"] { 
         background-color: #ffffff !important; 
         color: #1a1a2e !important; 
     }
+    
+    /* All text elements */
+    .stApp *, .main * {
+        color: #1a1a2e !important;
+    }
+    
+    /* Metric cards */
     [data-testid="stMetric"] { 
         border: 1px solid #e0e0e0; 
         padding: 24px; 
         border-radius: 8px; 
-        background-color: #fafafa; 
+        background-color: #fafafa !important; 
         box-shadow: 0 1px 3px rgba(0,0,0,0.08);
     }
     [data-testid="stMetricValue"] { 
@@ -40,19 +48,93 @@ st.markdown("""
         letter-spacing: 0.5px;
         font-weight: 600;
     }
+    
+    /* Headers */
     h1, h2, h3, h4, h5, h6 { 
         color: #1a1a2e !important; 
         font-weight: 600 !important;
     }
-    [data-testid="stSidebar"] {
+    
+    /* Sidebar */
+    [data-testid="stSidebar"], 
+    [data-testid="stSidebar"] > div,
+    section[data-testid="stSidebar"] {
         background-color: #f5f5f5 !important;
     }
     [data-testid="stSidebar"] * {
         color: #1a1a2e !important;
     }
+    
+    /* Dropdown/Select boxes */
+    .stSelectbox > div > div,
+    .stSelectbox [data-baseweb="select"],
+    .stSelectbox [data-baseweb="select"] > div,
+    [data-baseweb="select"],
+    [data-baseweb="popover"],
+    [data-baseweb="menu"],
+    div[data-baseweb="popover"] > div,
+    ul[role="listbox"],
+    ul[role="listbox"] li {
+        background-color: #ffffff !important;
+        color: #1a1a2e !important;
+    }
+    
+    /* Select box input */
+    .stSelectbox div[data-baseweb="select"] > div {
+        background-color: #ffffff !important;
+        border-color: #cccccc !important;
+    }
+    
+    /* Dropdown menu items */
+    [data-baseweb="menu"] li,
+    [data-baseweb="menu"] li:hover,
+    div[role="listbox"] div,
+    div[role="option"] {
+        background-color: #ffffff !important;
+        color: #1a1a2e !important;
+    }
+    [data-baseweb="menu"] li:hover,
+    div[role="option"]:hover {
+        background-color: #f0f0f0 !important;
+    }
+    
+    /* Date input */
+    .stDateInput > div > div,
+    .stDateInput input,
+    [data-baseweb="input"],
+    [data-baseweb="input"] input {
+        background-color: #ffffff !important;
+        color: #1a1a2e !important;
+        border-color: #cccccc !important;
+    }
+    
+    /* Calendar popup */
+    [data-baseweb="calendar"],
+    [data-baseweb="calendar"] * {
+        background-color: #ffffff !important;
+        color: #1a1a2e !important;
+    }
+    
+    /* Expander */
+    .streamlit-expanderHeader,
+    .streamlit-expanderContent {
+        background-color: #ffffff !important;
+        color: #1a1a2e !important;
+    }
+    
+    /* Data table */
+    .stDataFrame, 
+    [data-testid="stDataFrame"],
+    .stDataFrame * {
+        background-color: #ffffff !important;
+        color: #1a1a2e !important;
+    }
+    
+    /* Horizontal line */
     hr {
         border-top: 1px solid #e0e0e0;
     }
+    
     /* Force Plotly text to be dark */
     .js-plotly-plot .plotly text {
         fill: #1a1a2e !important;
@@ -61,6 +143,29 @@ st.markdown("""
     .js-plotly-plot .plotly .xtitle,
     .js-plotly-plot .plotly .ytitle {
         fill: #1a1a2e !important;
+    }
+    
+    /* Override any dark theme elements */
+    .st-emotion-cache-1gulkj5,
+    .st-emotion-cache-1v0mbdj,
+    .st-emotion-cache-16txtl3 {
+        background-color: #ffffff !important;
+    }
+    
+    /* Input fields */
+    input, textarea, select {
+        background-color: #ffffff !important;
+        color: #1a1a2e !important;
+    }
+    
+    /* Buttons */
+    button {
+        color: #1a1a2e !important;
+    }
+    
+    /* Labels */
+    label, .stSelectbox label, .stDateInput label {
+        color: #1a1a2e !important;
     }
     </style>
 """, unsafe_allow_html=True)
