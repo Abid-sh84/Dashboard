@@ -207,7 +207,7 @@ date_range = st.sidebar.date_input(
     max_value=max_date
 )
 
-# Device Filter
+# Device Filter with all types
 st.sidebar.subheader("Device Type")
 device_options = ["All"] + df["device_type"].dropna().unique().tolist()
 selected_device = st.sidebar.selectbox("Select Device", device_options)
