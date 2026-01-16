@@ -415,7 +415,7 @@ st.plotly_chart(fig_refunds, use_container_width=True)
 st.markdown("---")
 
 # ======================================================
-# LAYER 3: DEEP DIVE INSIGHTS
+# LAYER 3: DEEP DIVE INSIGHTS OF THE DATASETS
 # ======================================================
 st.subheader("Deep Dive Insights")
 
@@ -461,7 +461,7 @@ with col3:
     device_table["Conversion Rate (%)"] = device_table["Conversion Rate (%)"].round(2)
     st.dataframe(device_table, hide_index=True, use_container_width=True)
 
-# Chart 5: Top Products
+# Chart 5: Top Products of the bearcart
 with col4:
     st.markdown("#### Top Products by Revenue")
     
